@@ -2,10 +2,11 @@
 <html lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#1a1a1a"><link rel="canonical" href="{{ canonical_url }}">
+  <meta name="theme-color" content="{{ settings.ink }}"><link rel="canonical" href="{{ canonical_url }}">
   <title>{{ page_title }}{% unless page_title contains shop.name %} — {{ shop.name }}{% endunless %}</title>
   {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
   {{ content_for_header }}
+  <style>:root{--ink:{{ settings.ink }};--cream:{{ settings.cream }};--stone:{{ settings.stone }};--red:{{ settings.signal }};}</style>
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'theme.js' | asset_url }}" defer></script>
 </head>
